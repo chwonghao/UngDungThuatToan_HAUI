@@ -4,27 +4,29 @@
 
 using namespace std;
 
+int n = MAX;
 int x[MAX];
-int n = 4;
 
 string N[MAX] = {"TUNG", "CUC", "TRUC", "MAI"};
 char G[MAX] = {'A', 'B', 'C', 'D'};
 
-int c1 = 0, c2 = 0;
+
 int dd[1];
+int c1 = 0, c2 = 0;
 
-// thuat toan A1: phuong phap sinh hoan vi
-
-// ham dao nguoc
-
-// hien thi cau hinh
-void view_config(int x[], int n) {
-    for (int i = 1; i <= n; i++) 
-        cout << N[x[i] - 1] << " " << G[i - 1] << ", ";
-    cout << endl;
+// phuong phap sinh
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
-// cau hinh tiep theo
+void view_config(int x[], int n) {
+    for (int i = 1; i <= n; i++)
+        cout << N[x[i] - 1] << " " << G[i - 1] << ", ";
+    cout << endl;   
+}
+
 void next_config(int x[], int n, int i) {
     int k = n;
     while (x[i] > x[k]) k--;
@@ -38,7 +40,6 @@ void next_config(int x[], int n, int i) {
     }
 }
 
-// danh sach cau hinh
 void list_configs(int n) {
     int i, x[n + 1] = {0};
     for (i = 1; i <= n; i++) x[i] = i;
@@ -50,11 +51,11 @@ void list_configs(int n) {
         if (i > 0) next_config(x, n, i);
         c1++;
     } while (i > 0);
+    
 }
 
-// thuat toan A2: phuong phap quay lui
+// phuong phap quay lui
 
-// hien thi
 void show(int x[]) {
     for (int i = 1; i <= n; i++)
         cout << N[x[i] - 1] << " " << G[i - 1] << ", ";
@@ -62,7 +63,7 @@ void show(int x[]) {
 }
 
 void Try(int k) {
-    for (int i = 1; i <= n; i++) 
+    for (int i = 1; i <= n; i++)
         if (dd[i] == 0) {
             x[k] = i;
             if (k == n) {
@@ -77,11 +78,11 @@ void Try(int k) {
 }
 
 int main() {
-    cout << "Phuong phap sinh hoan vi" << endl;
+    cout << "Phuong phap sinh" << endl;
     list_configs(MAX);
-    cout << "So cach sap xep: " << c1 << endl;
+    cout << "So lan sap xep la: " << c1 << endl;
 
     cout << "Phuong phap quay lui" << endl;
     Try(1);
-    cout << "So cach sap xep: " << c2 << endl;
+    cout << "So lan sap xep la: " << c2 << endl;
 }
