@@ -1,6 +1,6 @@
 #include <iostream>
 
-#define MAX 10
+#define MAX 6
 
 using namespace std;
 
@@ -21,7 +21,7 @@ CongViec cv[] = {
     {"CV07", "12:30", 60},
     {"CV08", "13:30", 45},
     {"CV09", "14:15", 30},
-    {"CV10", "14:45", 15}
+    {"CV10", "14:45", 15},
 };
 
 void inNguoc(int i) {
@@ -63,5 +63,5 @@ void list_congfigs(int k, int n) {
 int main()
 {
     inNguoc(MAX);
-    list_congfigs(5, MAX);
+    list_congfigs(4, MAX);
 }
