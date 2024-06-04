@@ -8,24 +8,26 @@ using namespace std;
 // khai bao cho thuat toan quay lui
 int x[MAX], k = MIN, n = MAX;
 int c1 = 0, c2 = 0, c3 = 0, c4 = 0;
+int sum1 = 0;
 
 struct ManHinh
 {
     string hsx;
+    int gia;
     int namSX;
 };
 
 ManHinh mh[] = {
-    {"DELL", 2020}, // 1
-    {"ASUS", 2021}, // 2
-    {"AOGS", 2019}, // 3
-    {"DELL", 2022},
-    {"DELL", 2021},
-    {"ASUS", 2019}, // 6
-    {"AOGS", 2021},
-    {"DELL", 2024},
-    {"ASUS", 2023},
-    {"AOGS", 2023},
+    {"DELL", 100, 2020}, // 1
+    {"ASUS", 150, 2021}, // 2
+    {"AOGS", 120, 2019}, // 3
+    {"DELL", 200, 2022},
+    {"DELL", 160, 2021},
+    {"ASUS", 130, 2019}, // 6
+    {"AOGS", 220, 2021},
+    {"DELL", 180, 2024},
+    {"ASUS", 250, 2023},
+    {"AOGS", 270, 2023},
 };
 
 // so ban 
@@ -71,6 +73,19 @@ void deQuy4(int i) {
         deQuy4(i + 1);
     }
 }
+
+// de quy tinh tong gia tien
+
+void deQuy5(int i) {
+    if (i < MAX) {
+        sum1 += mh[i].gia;
+        deQuy5(i + 1);
+    }
+}
+
+// tim kiem nhi phan
+
+// 
 
 // thuat toan sinh
 
@@ -131,6 +146,9 @@ int main() {
     cout << "====================" << endl;
     deQuy4(0);
     cout << "So man hinh <= 2020: " << c2 << endl;
+    cout << "====================" << endl;
+    deQuy5(0);
+    cout << "Tong gia cua cac man hinh trong danh sach la: " << sum1 << endl;
     cout << "====================" << endl;
     list_configs(MIN, MAX);
     cout << "So lan chon " << MIN << " man hinh tu " << MAX << " bang thuat toan sinh la:" << c3 << endl;
