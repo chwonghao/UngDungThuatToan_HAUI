@@ -80,7 +80,7 @@ int main()
 	d[2] = {"Hang C", "CPU UPTO 2.4GHz-RAM 12GB-HDD 128GB", 600};
 	d[3] = {"Hang D", "CPU UPTO 2.8GHz-RAM 12GB-HDD 256GB", 900};
 	d[4] = {"Hang E", "CPU UPTO 2.7GHz-RAM 16GB-HDD 516GB", 300};
-	d[5] = {"Hang F", "CPU UPTO 3.0GHz-RAM 18GB-HDD 128GB", 450};
+	d[5] = {"Hang F", "CPU UPTO 3.0GHz-RAM 16GB-HDD 128GB", 450};
 	d[6] = {"Hang G", "CPU UPTO 3.2GHz-RAM 24GB-HDD 256GB", 680};
 
     int *kq = new int[n];
